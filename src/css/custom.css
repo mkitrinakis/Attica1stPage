@@ -1,0 +1,31 @@
+﻿table.menuAttica {
+    width:100%;
+}
+
+table.menuAttica td:hover {
+    color: white;
+}
+
+table.menuAttica td {
+    width: 15%;
+    height:25px;
+    background-color: #113981;
+    padding: 15px;
+    /*border: 25px solid #6185BD;*/
+    border: 20px solid white;
+    text-align: center;
+    color: rgba(255,255,255,0.8);
+    font-weight: bold;
+}
+
+table.menuAttica a {
+    text-decoration: none;
+    color: rgba(255,255,255,0.8);
+}
+
+    table.menuAttica a:hover {
+        text-decoration: none;
+        color: white;
+    }
+
+
