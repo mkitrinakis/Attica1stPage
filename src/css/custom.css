@@ -57,6 +57,9 @@ div .margin{
     margin :5px; 
 }
 
+div .padding {
+    padding: 20px;
+}
 
 .carousel-inner img {
     width: 100%;
