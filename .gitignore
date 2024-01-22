@@ -1,3 +1,4 @@
+.vs/
 FirstPage.csproj
 Web.config
-.vs/
+*.config
