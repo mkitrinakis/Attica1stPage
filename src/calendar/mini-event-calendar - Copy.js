@@ -19,7 +19,7 @@
 		</div>
 		<div id="calTFooter">
 			<h3 id="eventTitle">No events today.</h3>
-			
+			 <a href="javascript:void(0);" id="calLink"></a>
 		</div>
 	`;
 	var weekDaysFromSunday = '<div>Κ</div><div>Δ</div><div>Τ</div><div>Τ</div><div>Π</div><div>Π</div><div>Σ</div>';
@@ -44,16 +44,15 @@
 		var calFooter = miniCalendar.find("#calTFooter");
         var eventTitle = miniCalendar.find("#eventTitle");
         // commented by INTTRUST
-		//var eventsLink = miniCalendar.find("#calLink");
+		var eventsLink = miniCalendar.find("#calLink");
 
 		var today = new Date();
 		var curMonth = today.getMonth();
 		var curYear = today.getFullYear();
 
         eventTitle.text("No events today.");
-        // commented by INTTRUST
-		//eventsLink.text("ALL EVENTS");
-		//eventsLink.attr("href", settings.calendar_link);
+		eventsLink.text("ALL EVENTS");
+		eventsLink.attr("href", settings.calendar_link);
 
 		if(settings.from_monday)
 			thead.html(weekDaysFromMonday);
@@ -87,10 +86,9 @@
 		function populateCalendar(month, year, onInit) {
 			tbody.html("");
 			calTitle.text(shortMonths[month] + " " + year);
-            eventTitle.text("Click day to see event");
-            // Commented by INTTRUST 
-			//eventsLink.text("All Events");
-			//eventsLink.attr("href", "#");
+			eventTitle.text("Click day to see event");
+			eventsLink.text("All Events");
+			eventsLink.attr("href", "#");
 
 
 			curMonth = month;
@@ -179,17 +177,15 @@
 		}
 
 		function showEvent(event){
-			
+			// alert('1'); 
 			if(event && event !== null && event !== undefined){
-                eventTitle.text(event.title);
-                // commented by INTTRUST
-				//eventsLink.text("VIEW EVENT");
-				//eventsLink.attr("href", event.link);
+				eventTitle.text(event.title);
+				eventsLink.text("VIEW EVENT");
+				eventsLink.attr("href", event.link);
 			}else{
-                eventTitle.text("No events on this day.");
-                // commented by INTTRUST
-				//eventsLink.text("ALL EVENTS");
-				//eventsLink.attr("href", settings.calendar_link);
+				eventTitle.text("No events on this day.");
+				eventsLink.text("ALL EVENTS");
+				eventsLink.attr("href", settings.calendar_link);
 			}
 		}
 

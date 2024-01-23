@@ -5,7 +5,7 @@
     user-select: none;
 
     font-family: Verdana, sans-serif;
-    padding-bottom: 1.2em;
+    /*padding-bottom: 1.2em;*/  /*Commented by InTTrust*/
     background: #22252e;
     color: #fff;
 }
@@ -127,7 +127,7 @@
     color: #000;
 }
 
-#calTFooter{
+#calTFooter {
     display: flex;
     justify-content: space-between;
     -ms-align-items: center;
@@ -135,28 +135,35 @@
     font-size: 1.1em;
     padding: 0 1em;
     margin-top: 0.5em;
+    background-color: red; /*IntTrust */
+    height:30em; 
+    flex-wrap:wrap; 
 }
 
-#calTFooter #calLink{
-    font-size: 0.8em;
-    display: inline-block;
-    padding: 0.6em 0.8em;
-    flex-shrink: 0;
-    text-decoration: none;
-    color: #fffc23;
-}
+    #calTFooter #calLink {
+        display:none; 
+     
+        font-size: 0.8em;
+        display: inline-block;
+        padding: 0.6em 0.8em;
+        flex-shrink: 0;
+        text-decoration: none;
+        color: #fffc23;
+     
+    }
 
 #calTFooter #calLink:hover{
     background-color: #555;
 }
 
-#calTFooter #eventTitle{
-    margin: 0;
-    margin-right: 0.1em;
-    font-weight: normal;
-    font-size: 0.95em;
-    white-space: nowrap;
-    overflow: hidden;
-    -ms-text-overflow: ellipsis;
-    text-overflow: ellipsis;
-}
+    #calTFooter #eventTitle {
+        margin: 0;
+        margin-right: 0.1em;
+        font-weight: normal;
+        font-size: 0.95em;
+        white-space: nowrap;
+        overflow: hidden;
+        -ms-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        display:flex;
+    }
