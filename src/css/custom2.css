@@ -1,5 +1,5 @@
 ﻿body {
-    background-color: #e6eaf0; 
+    background-color: #f2f4f8;
 }
 
 table.menuAttica {
@@ -36,15 +36,9 @@ table.menuAttica a {
     width:100% !important
 }
 
-
-.color-white {
-    background-color: white;
-    border-color: white;
-}
-
 .color-light {
-    background-color: #f2f4f8;
-    border-color: #f2f4f8; 
+    background-color: white;
+    border-color: white; 
 }
 
 .color-middle {
