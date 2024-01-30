@@ -1,0 +1,2 @@
+C:\Users\mkitrinakis\Desktop\WORK\InT\ATTIKA\Attica1stPage\obj\Debug\FirstPage.csproj.AssemblyReference.cache
+C:\Users\mkitrinakis\Desktop\WORK\InT\ATTIKA\Attica1stPage\obj\Debug\FirstPage.csproj.CoreCompileInputs.cache

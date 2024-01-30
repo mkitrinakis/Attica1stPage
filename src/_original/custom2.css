@@ -1,0 +1,95 @@
+﻿body {
+    background-color: #f2f4f8;
+}
+
+table.menuTop {
+    width:100%; 
+}
+
+    table.menuTop td:hover {
+        color: white;
+    }
+
+    table.menuTop td {
+        width: 14.5%;
+        height: 25px;
+        background-color: #113981;
+        padding: 5px 5px 5px 5px;
+        border: 5px solid #6185BD;
+        border-radius: 190px;
+        border: 5px solid #f2f4f8;
+        text-align: center;
+        color: rgba(255,255,255,0.8);
+        font-weight: bold;
+    }
+
+table td.menuTop {
+    font-size: 0.8rem;
+}
+table.menuTop a {
+    text-decoration: none;
+    color: rgba(255,255,255,0.8);
+}
+
+    table.menuTop a:hover {
+        text-decoration: none;
+        color: white;
+    }
+
+    table td.menuTop-long {
+        font-size:0.8rem; 
+    }
+
+
+.width-full {
+    width:100% !important
+}
+
+.color-light {
+    background-color: white;
+    border-color: white; 
+}
+
+.color-middle {
+    background-color: #6185BD;
+    border-color: #32558C;
+}
+
+.color-dark {
+    background-color: #113981;
+    border-color: #32558C;
+    
+}
+
+.color-dark2 {
+    background-color: #32558C;
+    border-color: #32558C;
+}
+
+div .topmargin {
+    margin-top:5px; 
+}
+
+div .margin{
+    margin :5px; 
+}
+
+div .padding {
+    padding: 20px;
+}
+
+.carousel-inner img {
+    width: 100%;
+    height: 100%;
+}
+
+
+.menuLeft { 
+    margin-bottom:1em; 
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1415px;
+    }
+}

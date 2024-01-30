@@ -18,8 +18,12 @@
 			<div id="calTbody"></div>
 		</div>
 		<div id="calTFooter">
-			<h3 id="eventTitle">No events today.</h3>
-			
+			<div id="eventTitle">No events χχχχ  υυυυυυ   χχχχχχ   ζζζζζζζζ today.</div>
+			<!-- <div id="eventTitle2">No events χχχχ  υυυυυυ   χχχχχχ   ζζζζζζζζ today.</div>
+			<h3 id="eventTitle3"></h3>
+			<h3 id="eventTitle4">No events today.</h3>
+			<h3 id="eventTitle5">No events today.</h3>
+			<div id="eventTitle6">No events χχχχ  υυυυυυ   χχχχχχ   ζζζζζζζζ <br/> today & today .</div> --> 
 		</div>
 	`;
 	var weekDaysFromSunday = '<div>Κ</div><div>Δ</div><div>Τ</div><div>Τ</div><div>Π</div><div>Π</div><div>Σ</div>';
@@ -181,7 +185,7 @@
 		function showEvent(event){
 			
 			if(event && event !== null && event !== undefined){
-                eventTitle.text(event.title);
+                eventTitle.html(event.title);
                 // commented by INTTRUST
 				//eventsLink.text("VIEW EVENT");
 				//eventsLink.attr("href", event.link);

@@ -2,35 +2,44 @@
     background-color: #f2f4f8;
 }
 
-table.menuAttica {
+table.menuTop {
     width:100%; 
 }
 
-table.menuAttica td:hover {
-    color: white;
-}
+    table.menuTop td:hover {
+        color: white;
+    }
 
-    table.menuAttica td {
-        width: 15%;
+    table.menuTop td {
+        width: 14.5%;
         height: 25px;
         background-color: #113981;
-        padding: 15px;
-        /*border: 25px solid #6185BD;*/
-        border: 20px solid white;
+        padding: 5px 5px 5px 5px;
+        border: 5px solid #6185BD;
+        border-radius: 190px;
+        border: 5px solid #f2f4f8;
         text-align: center;
         color: rgba(255,255,255,0.8);
         font-weight: bold;
     }
 
-table.menuAttica a {
+table td.menuTop {
+    font-size: 0.8rem;
+}
+table.menuTop a {
     text-decoration: none;
     color: rgba(255,255,255,0.8);
 }
 
-    table.menuAttica a:hover {
+    table.menuTop a:hover {
         text-decoration: none;
         color: white;
     }
+
+    table td.menuTop-long {
+        font-size:0.8rem; 
+    }
+
 
 .width-full {
     width:100% !important

@@ -1,0 +1,50 @@
+﻿html, body {
+    margin: 0;
+    padding: 0;
+}
+/* Just an excuse to use CSS Grid 😊 */
+#wrapper {
+    padding: 40px;
+    display: grid;
+    grid-gap: 40px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+[id^=calendar],
+[id^=calendar] + h3 {
+    width: 250px;
+}
+
+    [id^=calendar] + h3 {
+        text-align: center;
+    }
+
+@media only screen and (max-width: 500px) {
+    #wrapper {
+        padding: 1em;
+        display: block;
+    }
+
+    [id^=calendar],
+    [id^=calendar] + h3 {
+        width: 100%;
+        max-width: 400px;
+        margin: 1em auto;
+    }
+
+        [id^=calendar] + h3 {
+            display: block;
+            margin-bottom: 2em;
+        }
+}
+
+
+div.calendarColumn {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+td.calendarColumn {
+    display: table-cell;
+    vertical-align: middle;
+}
