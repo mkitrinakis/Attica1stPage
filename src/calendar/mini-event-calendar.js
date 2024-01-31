@@ -18,7 +18,7 @@
 			<div id="calTbody"></div>
 		</div>
 		<div id="calTFooter">
-			<div id="eventTitle">No events χχχχ  υυυυυυ   χχχχχχ   ζζζζζζζζ today.</div>
+			<div id="eventTitle">Καμία καταχώρηση σήμερα!</div>
 			<!-- <div id="eventTitle2">No events χχχχ  υυυυυυ   χχχχχχ   ζζζζζζζζ today.</div>
 			<h3 id="eventTitle3"></h3>
 			<h3 id="eventTitle4">No events today.</h3>
@@ -54,7 +54,7 @@
 		var curMonth = today.getMonth();
 		var curYear = today.getFullYear();
 
-        eventTitle.text("No events today.");
+        eventTitle.text("Καμία καταχώρηση σήμερα");
         // commented by INTTRUST
 		//eventsLink.text("ALL EVENTS");
 		//eventsLink.attr("href", settings.calendar_link);
@@ -88,10 +88,22 @@
 			}
 		});
 
-		function populateCalendar(month, year, onInit) {
-			tbody.html("");
+
+        function alertDatesTooOld(month, year) {
+            var currentDate = new Date(); 
+            
+            var calendarDate = new Date(year, month, 1);
+            const diffTime = (currentDate - calendarDate);
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+            //alert(diffDays); 
+            if (diffDays >= 90) { alert('Το ημερολόγιο δείχνει καταχωρήσεις μέχρι και 90 μέρες πριν τη σημερινή'); }
+        }
+
+        function populateCalendar(month, year, onInit) {
+            alertDatesTooOld(month, year);
+            tbody.html("");
 			calTitle.text(shortMonths[month] + " " + year);
-            eventTitle.text("Click day to see event");
+            eventTitle.text("Ημερομηνίες με κόκκινη κουκίδα έχουν καταχώρηση");
             // Commented by INTTRUST 
 			//eventsLink.text("All Events");
 			//eventsLink.attr("href", "#");
@@ -190,7 +202,7 @@
 				//eventsLink.text("VIEW EVENT");
 				//eventsLink.attr("href", event.link);
 			}else{
-                eventTitle.text("No events on this day.");
+                eventTitle.text("Καμία καταχώρηση την επιλεγμένη ημερομηνία.");
                 // commented by INTTRUST
 				//eventsLink.text("ALL EVENTS");
 				//eventsLink.attr("href", settings.calendar_link);
