@@ -3,15 +3,36 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-// using Microsoft.SharePoint;
+ using Microsoft.SharePoint;
 using System.Web;
+using Microsoft.SharePoint.Utilities;
 
 namespace AtticaServices
 {
     public static class CalendarEntries
     {
 
+        private static SPListItemCollection getCalendarListItems()
+        {
+            SPSite site = SPContext.Current.Site;
+            using (SPWeb web = site.OpenWeb())
+            {
+                DateTime startDate = DateTime.Today.AddDays(-91);
+                SPList l = web.Lists["MainPageCalendar"];
+                SPQuery qry = new SPQuery();
+                string sqry = "<Geq><FieldRef Name='EventDate' /><Value IncludeTimeValue='FALSE' Type='DateTime'>" + SPUtility.CreateISO8601DateTimeFromSystemDateTime(startDate) + "</Value></Geq>";
+                sqry = "<Where>" + sqry + "</Where>";
+                qry.Query = sqry; 
+                SPListItemCollection allItem = l.GetItems(q);
+                qry.ViewFields = "<FieldRef Name='Title'/>";
+                qry.ViewFields += "<FieldRef Name='EventDate'/>";
+                qry.ViewFields += "<FieldRef Name='EventTitle'/>";
+                SPListItemCollection col = l.GetItems(qry);
+                return col;  
+            }
+        }
 
+        private 
 
         public static string getEtairikaNea()
         {
