@@ -1,0 +1,8 @@
+      <PageParserPaths>
+<PageParserPath VirtualPath="/*" CompilationMode="Always" AllowServerSideScript="true" IncludeSubFolders="true" />
+      </PageParserPaths>
+
+
+kai 
+ <assemblies>
+        <add assembly="FirstPage, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83afaa4edf1b5253" />

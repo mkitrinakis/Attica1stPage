@@ -2,3 +2,5 @@
 FirstPage.csproj
 Web.config
 *.config
+obj/
+bin/
