@@ -32,3 +32,5 @@ C:\Users\mkitrinakis\Desktop\WORK\InT\ATTIKA\Attica1stPage\bin\System.Xml.xml
 C:\Users\mkitrinakis\Desktop\WORK\InT\ATTIKA\Attica1stPage\bin\System.Configuration.xml
 C:\Users\mkitrinakis\Desktop\WORK\InT\ATTIKA\Attica1stPage\bin\System.Web.Services.xml
 C:\Users\mkitrinakis\Desktop\WORK\InT\ATTIKA\Attica1stPage\bin\System.EnterpriseServices.xml
+C:\Users\mkitrinakis\Desktop\WORK\InT\ATTIKA\Attica1stPage\bin\Newtonsoft.Json.dll
+C:\Users\mkitrinakis\Desktop\WORK\InT\ATTIKA\Attica1stPage\bin\Newtonsoft.Json.xml
