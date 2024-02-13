@@ -1,51 +1,10 @@
-﻿
+
 
 body {
     background-color: #f2f4f8;
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     !important font-weight: 300;
 }
-/* 
-table.menuTop {
-    width:100%; 
-}
-
-    table.menuTop td:hover {
-        color: white;
-    }
-
-    table.menuTop td {
-        width: 14.5%;
-        height: 25px;
-        background-color: rgb(27,71,141);
-        padding: 5px 5px 5px 5px;
-        border: 5px solid #6185BD;
-        border-radius: 190px;
-        border: 5px solid #f2f4f8;
-        text-align: center;
-        color: rgba(255,255,255,0.8);
-        font-weight: bold;
-    }
-
-table td.menuTop {
-    font-size: 0.8rem;
-}
-table.menuTop a {
-    text-decoration: none;
-    color: rgba(255,255,255,0.8);
-}
-
-    table.menuTop a:hover {
-        text-decoration: none;
-        color: white;
-    }
-
-    table td.menuTop-long {
-        font-size:0.8rem; 
-    }
-
-  */
-
 
 // Blue Attica Bank 27, 21, 141
 // secondary (Siel) 107, 167, 255
@@ -123,8 +82,6 @@ div .padding {
         opacity: 0.9;
     }
 
-
-
 .askCEO {
     display: flex;
     justify-content: center;
@@ -143,37 +100,6 @@ img.askCEO:hover {
     border-width: 0px 3px 0px 0px;
     border-color: white;
     padding: 10px;
-}
-
-
-/*
-.askCEOButton {
-	background-color: rgb(27,71,141);
-color: rgba(255,255,255,1);
- opacity:0.8; 
-  margin:30px 30px 30px 30px;
-}
-.askCEOButton:hover {
-	background-color: rgb(27,71,141);
-color: rgba(255,255,255,1);
-}
-*/
-
-/*
-@media (min-width: 1200px) {
-    .container {
-        max-width: 1415px;
-    }
-}
-*/
-
-
-@media (min-width: 1200px) {
-
-
-    .container {
-        max-width: 1900px;
-    }
 }
 
 
@@ -203,7 +129,10 @@ color: rgba(255,255,255,1);
     background-color: white;
 }
 
-}
+
+
+
+
 
 
 /* changes to IntranetOslo css */
@@ -271,7 +200,13 @@ color: rgba(255,255,255,1);
     max-width: 80%;
 }
 
+}
 
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1900px;
+    }
+}
 
 @media (max-width: 1600px) {
     .welcome-bottom-left {

@@ -40,7 +40,7 @@ namespace FirstPage
             try
             {
                 Guid siteID = SPContext.Current.Site.ID;
-                string userName = SPContext.Current.Web.CurrentUser.Name + "(" + SPContext.Current.Web.CurrentUser.LoginName + ")";
+                string userName = SPContext.Current.Web.CurrentUser.Name + "(" + SPContext.Current.Web.CurrentUser.Name + ")";
 
                 SPSecurity.RunWithElevatedPrivileges(delegate
                 {
@@ -50,12 +50,39 @@ namespace FirstPage
                         SPUtility.ValidateFormDigest();
                         SPList lNotes = elSite.RootWeb.Lists["WeWantToHear"];
                         SPListItem itm = lNotes.Items.Add();
+                        itm["Title"] = userName + " στις: " + System.DateTime.Now.ToString();
+                        itm["userName"] = userName;
+                        itm["comments"] = comments;
+                        itm.Update();   
+                        writeToContext(Context, "OK"); 
+                    }
+                });
+            }
+            catch (Exception e) { writeToContext(Context, "Error:" + e.Message); }
+        }
+
+        public void postAskCEO(string comments)
+        {
+            try
+            {
+                Guid siteID = SPContext.Current.Site.ID;
+                string userName = SPContext.Current.Web.CurrentUser.Name + "(" + SPContext.Current.Web.CurrentUser.Name + ")";
+
+                SPSecurity.RunWithElevatedPrivileges(delegate
+                {
+                    using (SPSite elSite = new SPSite(siteID))
+                    {
+                        Context.Items["FormDigestValidated"] = true;
+                        SPUtility.ValidateFormDigest();
+                        SPList lNotes = elSite.RootWeb.Lists["AskCEO"];
+                        SPListItem itm = lNotes.Items.Add();
+                        itm["Title"] = userName + " στις: " + System.DateTime.Now.ToString(); 
                         itm["userName"] = userName;
                         itm["comments"] = comments;
                         itm.Update();
                         //string rs = sendMail(itm);
-                        writeToContext(Context, "OK"); 
-                     //  writeToContext(Context, rs);
+                        writeToContext(Context, "OK");
+                        //  writeToContext(Context, rs);
                     }
                 });
             }

@@ -1,4 +1,4 @@
-<%@ Page language="C#" MasterPageFile="/_catalogs/masterpage/NewIntranet.master"    Inherits="Microsoft.SharePoint.WebPartPages.WebPartPage,Microsoft.SharePoint,Version=12.0.0.0,Culture=neutral,PublicKeyToken=71e9bce111e9429c" meta:progid="SharePoint.WebPartPage.Document" meta:webpartpageexpansion="full" %>
+<%@ Page language="C#" MasterPageFile="/_catalogs/masterpage/NewIntranet.master"    Inherits="Microsoft.SharePoint.WebPartPages.WebPartPage,Microsoft.SharePoint,Version=12.0.0.0,Culture=neutral,PublicKeyToken=71e9bce111e9429c" meta:progid="SharePoint.WebPartPage.Document" %>
 <%@ Register Tagprefix="SharePoint" Namespace="Microsoft.SharePoint.WebControls" Assembly="Microsoft.SharePoint, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %> <%@ Register Tagprefix="Utilities" Namespace="Microsoft.SharePoint.Utilities" Assembly="Microsoft.SharePoint, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %> <%@ Import Namespace="Microsoft.SharePoint" %> <%@ Register Tagprefix="WebPartPages" Namespace="Microsoft.SharePoint.WebPartPages" Assembly="Microsoft.SharePoint, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
 <asp:Content ContentPlaceHolderId="PlaceHolderPageTitle" runat="server">
 	<SharePoint:EncodedLiteral runat="server" text="<%$Resources:wss,multipages_homelink_text%>" EncodeMethod="HtmlEncode"/> 
@@ -98,6 +98,32 @@ Div.ms-titleareaframe {
    <div class="welcome-bottom-left">Καλως ήρθες  <asp:PlaceHolder runat="server"><%= FirstPage.WelcomeMsg.getUserName() %> </asp:PlaceHolder></div>
 					 
 </div>
+
+
+   <div class="mt-4 p-5 color-middle text-white rounded">
+                         <div class="row" style="text-align:center">
+                             <h3 class="display-4">NEA/ΑΝΑΚΟΙΝΩΣΕΙΣ</h3>
+                             <div class="col-md-12">
+                             </div>
+                         </div>
+                         <div class="row">
+                             <div class="col-md-4">
+<img class="newsButton" src="src/imgs/deltiatypou.jpg" alt="Deltia Typou"/>
+                             </div>
+                             <div class="col-md-4">
+<img class="newsButton" src="src/imgs/deltiatypou.jpg" alt="Deltia Typou"/>
+                             </div>
+                             <div class="col-md-4">
+<img class="newsButton" src="src/imgs/deltiatypou.jpg" alt="Deltia Typou"/>
+                             </div>
+                         </div>
+                         <div class="row">
+                         <div class="col-md-12"></div>
+                         <div class="newsFooter"></div>
+                         </div>
+                     </div>
+
+
                      <div class="jumbotron color-middle mt-4 p-5 text-white rounded" id="home">
                          <h1 class="display-4">Ask CEO</h1>
                          <p class="lead">Στείτε την ερώτησή σας</p>
@@ -202,30 +228,15 @@ $.post("_layouts/_webServices/postNotes.asmx/postWeWantToHear2",
      <script>
          var sameDaylastWeek = new Date().setDate(new Date().getDate() - 7);
          var someDaynextMonth = new Date().setDate(new Date().getDate() + 31);
+         var t3 = new Date().setDate(new Date(2024,02,21)); 
+         var t4 = new Date(2024,1,21); 
+       //  alert (sameDaylastWeek); 
+         alert(t4); 
 
          // All dates should be provided in timestamps
-         var sampleEvents = [
-             {
-                 title: "<ul><li>Something in English event with a <a href=\"https://www.atticabank.gr/el\"> link </a> </li><li>Η ετήσια κοπή πίτας </li><li>Το ΙΤ της Τράπεζας Ατικής σας καλεί σε μία βραδειά Καραόκε</li></ul><ul><li>Το ΙΤ της Τράπεζας Ατικής σας καλεί σε μία βραδειά που ... δεν ξέρουμε τι έχει αλλά πρέπει να σας καλέσουμε για να δούμε πως φαίνεται ένας μεγάλος τίτλος στο ημερολόγιο!</li></ul>",
-                 date: sameDaylastWeek, // Same day as today, last week
-                 link: "https://www.eventbrite.com/e/soulful-sundays-bay-area-edition-tickets-55214242285?aff=ehomecard"
-             },
-             {
-                 title: "Άλλος ένας σχετικα μεγαλούτσικος  τίτλος στο ημερολόγιο!",
-                 date: sameDaylastWeek, // Same day as today, last week
-                 link: "https://www.eventbrite.com/e/soulful-sundays-bay-area-edition-tickets-55214242285?aff=ehomecard"
-             },
-             {
-                 title: "Athens Bank Committe (Τράπεζα της Ελλάδος)",
-                 date: new Date().getTime(), // Today
-                 link: "https://www.eventbrite.co.uk/e/london-film-comic-con-summer-2019-tickets-49472593860?aff=ebdssbdestsearch"
-             },
-             {
-                 title: "Και ένα μικρό event! ",
-                 date: someDaynextMonth, // Some day as today, next month
-                 link: "https://www.eventbrite.com/e/leaner-stronger-faster-tm-youth-athletic-camp-2021-tickets-38245970728?aff=ebdssbdestsearch"
-             }
-         ];
+         var sampleEvents = 
+        <asp:PlaceHolder runat="server" __designer:Preview="&lt;%= FirstPage.CalendarEvents.getEvents() %&gt;" __designer:Values="&lt;P N=&#39;ID&#39; ID=&#39;1&#39; T=&#39;ctl05&#39; /&gt;&lt;P N=&#39;Page&#39; ID=&#39;2&#39; /&gt;&lt;P N=&#39;TemplateControl&#39; R=&#39;2&#39; /&gt;&lt;P N=&#39;AppRelativeTemplateSourceDirectory&#39; R=&#39;-1&#39; /&gt;"><%= FirstPage.CalendarEvents.getEvents() %> </asp:PlaceHolder>;
+         
 
          $(document).ready(function () {
              $("#calendar").MEC({
