@@ -13,6 +13,7 @@ To build the master page directly from this HTML file, simply edit the page as y
 <%@Register TagPrefix="PublishingRibbon" TagName="PublishingRibbon" Src="~/_controltemplates/15/Ribbon.ascx"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <SharePoint:SPHtmlTag runat="server" id="SPHtmlTag" dir="&lt;%$Resources:wss,multipages_direction_dir_value%&gt;">
+  
     
     <head runat="server">
         <meta http-equiv="X-UA-Compatible" content="IE=9" />
@@ -23,6 +24,9 @@ To build the master page directly from this HTML file, simply edit the page as y
         <SharePoint:SPPinnedSiteTile runat="server" TileUrl="/_layouts/15/images/SharePointMetroAppTile.png" TileColor="#0072C6" />
         <SharePoint:RobotsMetaTag runat="server" />
         <SharePoint:PageTitle runat="server">
+        
+        
+        
         <asp:ContentPlaceHolder id="PlaceHolderPageTitle" runat="server" />
         </SharePoint:PageTitle>
         <SharePoint:StartScript runat="server" />
@@ -37,10 +41,14 @@ To build the master page directly from this HTML file, simply edit the page as y
         <SharePoint:CustomJSUrl runat="server" />
         <SharePoint:SoapDiscoveryLink runat="server" />
         <SharePoint:AjaxDelta id="DeltaPlaceHolderAdditionalPageHead" Container="false" runat="server">
-        <asp:ContentPlaceHolder id="PlaceHolderAdditionalPageHead" runat="server" />
+        <asp:ContentPlaceHolder id="PlaceHolderAdditionalPageHead" runat="server" >
+        </asp:ContentPlaceHolder>
         <SharePoint:DelegateControl runat="server" ControlId="AdditionalPageHead" AllowMultipleControls="true" />
         </SharePoint:AjaxDelta>
         <SharePoint:SPShortcutIcon runat="server" IconUrl="/_layouts/15/images/favicon.ico?rev=40" />
+        
+            <link rel="stylesheet" href="/src/css/master_custom.css" />
+        
 <![CDATA[ [if IE 9] ]]>        <style type="text/css">//<![CDATA[
     .ms-core-animation-transparent
     {
@@ -70,25 +78,27 @@ To build the master page directly from this HTML file, simply edit the page as y
     //]]></style>
     <![endif]-->
         <script type="text/javascript">//<![CDATA[
-        var g_pageLoadAnimationParams = { elementSlideIn : "sideNavBox", elementSlideInPhase2 : "contentBox" };
-    
-        
-        
-        
-        //]]></script>
+            var g_pageLoadAnimationParams = { elementSlideIn: "sideNavBox", elementSlideInPhase2: "contentBox" };
+
+
+
+
+            //]]></script>
         <SharePoint:CssRegistration Name="Themable/oslo.css" runat="server" EnableCssTheming="true" />
-        
-        
     </head>
+    
+    <!-- inttrust style top menu--> 
+     
+    <!-- end of inttrust style -->     
     <body onhashchange="if (typeof(_spBodyOnHashChange) != 'undefined') _spBodyOnHashChange();"><SharePoint:SharePointForm onsubmit="if (typeof(_spFormOnSubmitWrapper) != 'undefined') {return _spFormOnSubmitWrapper();} else {return true;}" runat="server">
         <SharePoint:ImageLink runat="server" />
         <SharePoint:SPNoScript runat="server" />
         <SharePoint:SPClientIDGenerator runat="server" ServerControlID="DeltaPlaceHolderMain;DeltaPlaceHolderPageTitleInTitleArea;DeltaPlaceHolderUtilityContent" />
-        <script type="text/javascript">//<![CDATA[ var submitHook = function () { return false; }; theForm._spOldSubmit = theForm.submit; theForm.submit = function () { if (!submitHook()) { this._spOldSubmit(); } }; 
-        
-        
-        
-        //]]></script>
+        <script type="text/javascript">//<![CDATA[ var submitHook = function () { return false; }; theForm._spOldSubmit = theForm.submit; theForm.submit = function () { if (!submitHook()) { this._spOldSubmit(); } };
+
+
+
+            //]]></script>
         <WebPartPages:SPWebPartManager runat="Server"/>
         <asp:ScriptManager id="ScriptManager" runat="server" EnablePageMethods="false" EnablePartialRendering="true" EnableScriptGlobalization="false" EnableScriptLocalization="true" />
         <SharePoint:AjaxDelta id="DeltaDelegateControls" runat="server">
@@ -96,6 +106,9 @@ To build the master page directly from this HTML file, simply edit the page as y
         <SharePoint:DelegateControl ControlId="GlobalSiteLink3" Scope="Farm" runat="server" Visible="false" />
         </SharePoint:AjaxDelta>
         <SharePoint:SPSecurityTrimmedControl runat="server" HideFromSearchCrawler="true" EmitDiv="true">
+        
+        
+        
         <div id="TurnOnAccessibility" style="display:none" class="s4-notdlg noindex">
             <a id="linkTurnOnAcc" data-accessibility-nocheck="true" href="#" class="ms-TurnOnAcc" onclick="SetIsAccessibilityFeatureEnabled(true);UpdateAccessibilityUI();document.getElementById('linkTurnOffAcc').focus();return false;">
                 <SharePoint:EncodedLiteral runat="server" text="&lt;%$Resources:wss,master_turnonaccessibility%&gt;" EncodeMethod="HtmlEncode" />
@@ -130,6 +143,9 @@ To build the master page directly from this HTML file, simply edit the page as y
         </a>
         </SharePoint:SPSecurityTrimmedControl>
         <SharePoint:AuthenticatedUserDiv runat="server" ClientIDMode="static" Id="authWrapper" AuthenticatedStyle="ms-belltown-authenticated">
+        
+        
+        
         <div class="ms-belltown-anonShow">
             <div id="ms-designer-ribbon">
                 <PublishingRibbon:PublishingRibbon runat="server" />
@@ -149,24 +165,42 @@ To build the master page directly from this HTML file, simply edit the page as y
                             <div id="titleAreaRow" class="ms-tableRow">
                                 <div id="siteIcon" class="ms-tableCell ms-verticalAlignTop">
                                     
-                                    <SharePoint:AjaxDelta id="DeltaSiteLogo" BlockElement="true" runat="server">
+                                   <SharePoint:AjaxDelta id="DeltaSiteLogo" BlockElement="true" runat="server">
                                         <SharePoint:SPLinkButton CssClass="ms-siteicon-a" runat="server" id="onetidProjectPropertyTitleGraphic" NavigateUrl="/">
                                             <SharePoint:SiteLogoImage name="onetidHeadbnnr0" id="onetidHeadbnnr2" LogoImageUrl="/_layouts/15/images/siteIcon.png?rev=40" runat="server">
                                                 
                                             </SharePoint:SiteLogoImage>
                                         </SharePoint:SPLinkButton>
                                     </SharePoint:AjaxDelta>
-                                    
+                                     
                                 </div>
                                 <!--<div class="ms-tableCell ms-verticalAlignTop"></div>-->
-                                <div class="ms-tableCell ms-verticalAlignTop rightBanner">
-                                	<a href="https://www.atticabank.gr/el/individuals/insurance-products/insurance-programmes"> 
-                                    <img src="/Style Library/Images/photo.jpg" alt="" /></a>
+                                <div class="ms-tableCell ms-verticalAlignTop rightBanner"> 
+                                <!-- InTTrust Commented out --> 
+                                <!--	<a href="https://www.atticabank.gr/el/individuals/insurance-products/insurance-programmes"> 
+                                    <img src="/Style Library/Images/photo.jpg" alt="" /></a> --> 
+                                       <!-- end of InTTrust Commented out --> 
+<!-- InTTrust fill --> 
+ <SharePoint:AjaxDelta id="DeltaPlaceHolderSearchArea" class="ms-belltown-searcharea" BlockElement="true" runat="server">
+                                    
+                                    <div class="ms-pub-logon">
+                                        <wssucw:Welcome id="IdOsloWelcome" runat="server" EnableViewState="false" />
+                                    </div>
+                                    <asp:ContentPlaceHolder id="PlaceHolderSearchArea" runat="server">
+                                    <div id="searchInputBox">
+                                        <SharePoint:DelegateControl runat="server" ControlId="SmallSearchInputBox" />
+                                        
+                                    </div>
+                                    </asp:ContentPlaceHolder>
+                                    
+                                    </SharePoint:AjaxDelta>
+
+<!-- end of InTTrust fill --> 
                                 </div>
                             </div>
-                            <div class="ms-tableRow">
-                                <!--<div class="ms-tableCell ms-verticalAlignTop"></div>-->
-                                <div class="ms-tableCell ms-verticalAlignTop quickLaunchContainer">
+                          <div class="ms-tableRow">
+                           <!--       <div class="ms-tableCell ms-verticalAlignTop"></div>-->
+   <div class="ms-tableCell ms-verticalAlignTop quickLaunchContainer">
                                     <SharePoint:AjaxDelta id="DeltaHorizontalQuickLaunch" class="ms-core-navigation ms-belltown-quicklaunch" role="navigation" BlockElement="true" runat="server">
                                     <div class="ms-quicklaunchouter">
                                         <div class="ms-quickLaunch">
@@ -183,21 +217,28 @@ To build the master page directly from this HTML file, simply edit the page as y
                                     </div>
                                     </SharePoint:AjaxDelta>
                                 </div>
+                                 <!-- InTTrust Commented out --> 
+<!--
                                 <div class="ms-tableCell  ms-verticalAlignTop">
-                                    <SharePoint:AjaxDelta id="DeltaPlaceHolderSearchArea" class="ms-belltown-searcharea" BlockElement="true" runat="server">
+                                  
+                                    <SharePoint:AjaxDelta id="DeltaPlaceHolderSearchArea2" class="ms-belltown-searcharea" BlockElement="true" runat="server">
                                     
                                     <div class="ms-pub-logon">
-                                        <wssucw:Welcome id="IdOsloWelcome" runat="server" EnableViewState="false" />
+                                        <wssucw:Welcome id="IdOsloWelcome2" runat="server" EnableViewState="false" />
                                     </div>
-                                    <asp:ContentPlaceHolder id="PlaceHolderSearchArea" runat="server">
+                                    <asp:ContentPlaceHolder id="PlaceHolderSearchArea2" runat="server">
                                     <div id="searchInputBox">
-                                        <SharePoint:DelegateControl runat="server" ControlId="SmallSearchInputBox" />
+                                        <SharePoint:DelegateControl runat="server" ControlId="SmallSearchInputBox2" />
                                         
                                     </div>
                                     </asp:ContentPlaceHolder>
                                     
-                                    </SharePoint:AjaxDelta>
+                                    </SharePoint:AjaxDelta>  
+
                                 </div>
+                                 --> 
+                                    
+                                       <!-- end InTTrust Commented out --> 
                             </div>
                         </div>
                     </div>
@@ -250,7 +291,7 @@ To build the master page directly from this HTML file, simply edit the page as y
                                                 <SharePoint:SPTitleBreadcrumb runat="server" RenderCurrentNodeAsLink="true" SiteMapProvider="SPContentMapProvider" WelcomePageUsesWebTitle="false">
                                                 <PATHSEPARATORTEMPLATE>
                                                 <SharePoint:ClusteredDirectionalSeparatorArrow runat="server" />
-                                                </PATHSEPARATORTEMPLATE>
+                                                	</PATHSEPARATORTEMPLATE>
                                                 </SharePoint:SPTitleBreadcrumb>
                                                 </asp:ContentPlaceHolder>
                                                 </SharePoint:AjaxDelta>
@@ -307,6 +348,9 @@ To build the master page directly from this HTML file, simply edit the page as y
         </div>
         </SharePoint:AuthenticatedUserDiv>
         <SharePoint:ScriptBlock runat="server">
+        
+        
+        
         var g_Workspace = "s4-workspace";
         </SharePoint:ScriptBlock>
     </SharePoint:SharePointForm>

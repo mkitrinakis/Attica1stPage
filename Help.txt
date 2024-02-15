@@ -1,3 +1,5 @@
+      **************   WEB CONFIG CHANGES ************
+      
       <PageParserPaths>
 <PageParserPath VirtualPath="/*" CompilationMode="Always" AllowServerSideScript="true" IncludeSubFolders="true" />
       </PageParserPaths>
@@ -6,3 +8,18 @@
 kai 
  <assemblies>
         <add assembly="FirstPage, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83afaa4edf1b5253" />
+
+        Kai τα Post/Get Web Services Protocoals 
+
+
+
+
+
+        Current master Page: (checked from /_api/web?$select=CustomMasterUrl,MasterUrl) 
+        /_catalogs/masterpage/intranetOslo.master
+
+        http://sp16qa.boahq.gr/_catalogs/masterpage/Forms/AllItems.aspx
+        http://sp16qa.boahq.gr/_layouts/15/ChangeSiteMasterPage.aspx
+
+
+        Μεταφέρουμε το παλιό logo.jpg σε logo_old.jpg  και το καινούργιο το λέμε logo.jpg. 

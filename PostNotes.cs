@@ -61,6 +61,7 @@ namespace FirstPage
             catch (Exception e) { writeToContext(Context, "Error:" + e.Message); }
         }
 
+        [WebMethod]
         public void postAskCEO(string comments)
         {
             try

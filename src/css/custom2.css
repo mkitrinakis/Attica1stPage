@@ -203,6 +203,26 @@ color: rgba(255,255,255,1);
     background-color: white;
 }
 
+.small-header {
+    font-weight: bold;
+}
+
+.welcome-parent {
+    position: relative;
+    width: 100%;
+}
+
+.welcome-bottom-left {
+    position: absolute;
+    color: rgb(27,21,141);
+    font-size: 1.6em;
+    font: "Helvetica Neue";
+    left: 40px;
+    top: 40%;
+    bottom: auto;
+    max-width: 40%;
+}
+
 }
 
 
@@ -247,25 +267,15 @@ color: rgba(255,255,255,1);
 } */
 
 
-.small-header {
-    font-weight: bold;
+
+.modal-header {
+    background-color: rgb(27,21,141);
+    color: white;
 }
 
-.welcome-parent {
-    position: relative;
-    width: 100%;
-}
 
-.welcome-bottom-left {
-    position: absolute;
-    color: rgb(27,21,141);
-    font-size: 1.6em;
-    font: "Helvetica Neue";
-    left: 40px;
-    top: 40%;
-    bottom: auto;
-    max-width: 40%;
-}
+
+
 
 .custom-dialogForm {
     max-width: 80%;

@@ -54,7 +54,7 @@
 		var curMonth = today.getMonth();
 		var curYear = today.getFullYear();
 
-        eventTitle.text("Καμία καταχώρηση σήμερα");
+       // eventTitle.text("Καμία καταχώρηση σήμερα");
         // commented by INTTRUST
 		//eventsLink.text("ALL EVENTS");
 		//eventsLink.attr("href", settings.calendar_link);
@@ -201,8 +201,9 @@
                 // commented by INTTRUST
 				//eventsLink.text("VIEW EVENT");
 				//eventsLink.attr("href", event.link);
-			}else{
-                eventTitle.text("Καμία καταχώρηση την επιλεγμένη ημερομηνία.");
+			} else {
+				eventTitle.text("");
+                //eventTitle.text("Καμία καταχώρηση την επιλεγμένη ημερομηνία.");
                 // commented by INTTRUST
 				//eventsLink.text("ALL EVENTS");
 				//eventsLink.attr("href", settings.calendar_link);
