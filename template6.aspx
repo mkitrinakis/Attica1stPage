@@ -1,231 +1,161 @@
-﻿<!doctype html>
-<html lang="en">
+﻿<%@ Page language="C#" MasterPageFile="/_catalogs/masterpage/NewIntranet.master"    Inherits="Microsoft.SharePoint.WebPartPages.WebPartPage,Microsoft.SharePoint,Version=12.0.0.0,Culture=neutral,PublicKeyToken=71e9bce111e9429c" meta:progid="SharePoint.WebPartPage.Document" meta:webpartpageexpansion="full" %>
+<%@ Register Tagprefix="SharePoint" Namespace="Microsoft.SharePoint.WebControls" Assembly="Microsoft.SharePoint, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %> <%@ Register Tagprefix="Utilities" Namespace="Microsoft.SharePoint.Utilities" Assembly="Microsoft.SharePoint, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %> <%@ Import Namespace="Microsoft.SharePoint" %> <%@ Register Tagprefix="WebPartPages" Namespace="Microsoft.SharePoint.WebPartPages" Assembly="Microsoft.SharePoint, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
+<asp:Content ContentPlaceHolderId="PlaceHolderPageTitle" runat="server">
+	<SharePoint:EncodedLiteral runat="server" text="<%$Resources:wss,multipages_homelink_text%>" EncodeMethod="HtmlEncode"/> 
+	- <SharePoint:ProjectProperty Property="Title" runat="server"/>
+</asp:Content>
+<asp:Content ContentPlaceHolderId="PlaceHolderPageImage" runat="server"><IMG SRC="/_layouts/images/blank.gif" width=1 height=1 alt=""></asp:Content>
+<asp:Content ContentPlaceHolderId="PlaceHolderPageTitleInTitleArea" runat="server">
+			<label class="ms-hidden">
+			<SharePoint:ProjectProperty Property="Title" runat="server"/></label>
+</asp:Content>
+<asp:Content ContentPlaceHolderId="PlaceHolderTitleBreadcrumb" runat="server"/>
+<asp:Content ContentPlaceHolderId="PlaceHolderTitleAreaClass" runat="server">
+
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
-
-    <title>Attica 1st Page demo</title>
-
-    <link rel="stylesheet" href="src/bootstrap/b462.css">
-
-    <link rel="stylesheet" href="src/calendar/mini-event-calendar2.css">
-    <link rel="stylesheet" href="src/css/custom2.css" />
-    <link rel="stylesheet" href="src/css/customCalendar.css" />
-
-    <!-- Bootstrap core CSS -->
-    <!-- Custom styles for this template -->
-
-  
-
+<meta name="WebPartPageExpansion" content="full" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
- <style>
-  /* Make the image fully responsive */
-  
-  </style>
- 
-		
- <body>
 
 
-     <style>
-
-
-
-         .overflow-wrap {
-             width: 240px;
-             border: 1px solid #000;
-             padding: 5px;
-         }
-
-         .overflow-wrap--break-word {
-             overflow-wrap: anywhere;
-         }
-     </style>
-
-     <h3 class="overflow-wrap overflow-wrap--break-word"> It is time to paaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaarty </h3>
-
-
+<style type="text/css">
+TD.ms-titleareaframe, .ms-pagetitleareaframe {
+	height: 10px;
+}
+Div.ms-titleareaframe {
+	height: 100%;
+}
+.ms-pagetitleareaframe table {
+	background: none;
+	height: 10px;
+}
+</style>
+</asp:Content>
+<asp:Content ContentPlaceHolderId="PlaceHolderAdditionalPageHead" runat="server">
+	<META Name="CollaborationServer" Content="SharePoint Team Web Site">
+	<script type="text/javascript">
+        var navBarHelpOverrideKey = "wssmain";
+    </script>
+</asp:Content>
+<asp:Content ContentPlaceHolderId="PlaceHolderSearchArea" runat="server">
+	<SharePoint:DelegateControl runat="server"
+		ControlId="SmallSearchInputBox"/>
+</asp:Content>
+<asp:Content ContentPlaceHolderId="PlaceHolderLeftActions" runat="server">
+</asp:Content>
+<asp:Content ContentPlaceHolderId="PlaceHolderPageDescription" runat="server"/>
+<asp:Content ContentPlaceHolderId="PlaceHolderBodyAreaClass" runat="server">
+<style type="text/css">
+.ms-bodyareaframe {
+	padding: 0px;
+}
+</style>
+</asp:Content>
+<asp:Content ContentPlaceHolderId="PlaceHolderMain" runat="server">
+	
+ <link rel="stylesheet" href="/SiteAssets/src/bootstrap/b462.css">
+    <link rel="stylesheet" href="/SiteAssets/src/css/master_custom.css" />
+    <link rel="stylesheet" href="/SiteAssets/src/calendar/mini-event-calendar2.css">
+    <link rel="stylesheet" href="/SiteAssets/src/css/firstPage_custom.css" />
+    <link rel="stylesheet" href="/SiteAssets/src/css/customCalendar.css" />
 
      <main role="main">
 
-         <!-- Main jumbotron for a primary marketing message or call to action -->
 
-
-         <div class="container width-full">
+         <div class="container width-full   bootstrap-box-sizing">
              <!-- Example row of columns -->
-             <div class="row  ">
-                 <!--<div class="col-md-3">
-                    aaaaaa
-                </div>
-                <div class="col-md-3">
-                    bbbbbbb
-                </div>
-                <div class="col-md-3">
-                    cccccccc
-                </div>
-                <div class="col-md-3">
-                    dddddddddd
-                </div>-->
-                 <table class="menuTop rounded-3 overflow-hidden">
-                     <tbody>
-                         <tr>
-
-                             <td>Η Τράπεζα</td>
-                             <td>Προϊόντα</td>
-                             <td>Επικοινωνία</td>
-                             <td>Άνθρωποι</td>
-                             <td>ESG</td>
-                             <td class="menuTop-long">Σύλλογος Υπαλλήλων/Παρατάξεις </td>
-                             <td><a href="www.google.gr">Περισσότερα</a></td>
-                         </tr>
-                     </tbody>
-                 </table>
-                 <table class="overflow-hidden">
-                     <tbody>
-                         <tr>
-
-                             <td><img src="src/imgs/Attica_Button_h-trapeza.png" style="width:80%" /></td>
-                             <td><img src="src/imgs/Attica_Button_proionta.png" /></td>
-                             <td><img src="src/imgs/Attica_Button_epikoinonia.png" /></td>
-                             <td><img src="src/imgs/Attica_Button_anthropoi.png" /></td>
-                             <td><img src="src/imgs/Attica_Button_esg.png" /></td>
-                             <td><img src="src/imgs/Attica_Button_syllogos.png" style="width:80%" /></td>
-                             <td><img src="src/imgs/Attica_Button_perissotera.png" /></td>
-                         </tr>
-                     </tbody>
-                 </table>
-             </div>
+            
              <div class="row color-light">
                  <div class="col-md-2">
                      <div class="row menuLeft">
                          <div class="col-12 align-self-center">
-                             <a href="https://www.google.gr">   <img src="src/imgs/Intranet_side_banner_dieuthinseis.png" /> </a>
+                             <a href="https://www.google.gr">   <img src="/SiteAssets/src/imgs/Intranet_side_banner_dieuthinseis.png" /> </a>
                          </div>
                      </div>
                      <div class="row menuLeft">
                          <div class="col-12 align-self-center">
-                             <img src="src/imgs/Intranet_side_banner_diadikasies.png" />
+                             <img src="/SiteAssets/src/imgs/Intranet_side_banner_aitiseis.png" />
                          </div>
                      </div>
                      <div class="row menuLeft">
                          <div class="col-12 align-self-center">
-                             <img src="src/imgs/Intranet_side_banner_systimata.png" />
+                             <img src="/SiteAssets/src/imgs/Intranet_side_banner_systimata.png" />
                          </div>
                      </div>
                      <div class="row menuLeft">
                          <div class="col-12 align-self-center">
-                             <img src="src/imgs/Intranet_side_banner_links.png" />
+                             <img src="/SiteAssets/src/imgs/Intranet_side_banner_links.png" />
                          </div>
                      </div>
                      <div class="row menuLeft">
                          <div class="col-12 align-self-center">
-                             <img src="src/imgs/Intranet_side_banner_arxeio.png" />
+                             <img src="/SiteAssets/src/imgs/Intranet_side_banner_arxeio.png" />
                          </div>
                      </div>
                  </div>
 
                  <div class="col-md-7">
-                     <div id="demo" class="carousel slide" data-ride="carousel">
-
-                         <!-- Indicators -->
-                         <ul class="carousel-indicators">
-                             <li data-target="#demo" data-slide-to="0" class="active"></li>
-                             <li data-target="#demo" data-slide-to="1"></li>
-                             <li data-target="#demo" data-slide-to="2"></li>
-                         </ul>
-
-                         <!-- The slideshow -->
-                         <div class="carousel-inner">
-                             <div class="carousel-item active">
-                                 <img src="src/imgs/la.jpg" alt="Los Angeles" width="1100" height="500">
-                             </div>
-                             <div class="carousel-item">
-                                 <img src="src/imgs/chicago.jpg" alt="Chicago" width="1100" height="500">
-                             </div>
-                             <div class="carousel-item">
-                                 <img src="src/imgs/ny.jpg" alt="New York" width="1100" height="500">
-                             </div>
-                         </div>
-
-                         <!-- Left and right controls -->
-                         <a class="carousel-control-prev" href="#demo" data-slide="prev">
-                             <span class="carousel-control-prev-icon"></span>
-                         </a>
-                         <a class="carousel-control-next" href="#demo" data-slide="next">
-                             <span class="carousel-control-next-icon"></span>
-                         </a>
-                     </div>
-
+     <!--              <img src="src/imgs/la.jpg" alt="Los Angeles" width="770" height="350">  --> 
+<!--     <img class="img-fluid w-100" src="src/imgs/Welcome.jpg" alt="Welcome" >  --> 
                      <!--<div class="mt-4 p-5 bg-primary text-white rounded">-->
-                     <div class="mt-4 p-5 color-middle text-white rounded">
-                         <div class="row" style="text-align:center">
-                             <h3 class="display-4">NEA/ΑΝΑΚΟΙΝΩΣΕΙΣ</h3>
+                 <div class="welcome-parent">
+   <img class="img-fluid w-100" src="/SiteAssets/src/imgs/Welcome.png" alt="">
+
+
+   <div class="welcome-bottom-left">Καλως ήρθες  <asp:PlaceHolder runat="server"><%= FirstPage.WelcomeMsg.getUserName() %> στο  <b>Intranet της Attica Bank</b> </asp:PlaceHolder></div>
+					 
+</div>
+
+
+   <div class="mt-4 p-25 color-middle text-white newsDiv   rounded">
+                         <div class="row newsDivInner" style="text-align:center">
+<!--                             <h3 class="attica-fonts">NEA/ΑΝΑΚΟΙΝΩΣΕΙΣ</h3> --> 
+<h3> ΝΕΑ/ΑΝΑΚΟΙΝΩΣΕΙΣ    </h3>
+
                              <div class="col-md-12">
                              </div>
                          </div>
                          <div class="row">
-                             <div class="col-md-6">
-                                 <button type="button" class="btn btn-primary p-3 padding color-middle margin btn-block pagemenu">Εσωτερικά Νέα</button>
+                             <div class="col-md-4">
+<a href="javascript:alert('Here we must have a link')"><img class="newsButton" src="/SiteAssets/src/imgs/intranet_button_ta-nea.png" alt="Τα Νέα μας"/></a>
                              </div>
-                             <div class="col-md-6">
-                                 <button type="button" class="btn btn-primary p-3 color-middle margin btn-block pagemenu">Δελτία Τύπου</button>
+                             <div class="col-md-4">
+<a href="/Pages/Main.aspx"><img class="newsButton" src="/SiteAssets/src/imgs/intranet_button_theseis-ergasias.png" alt="Θέσεις Εργασίας"/></a>
                              </div>
-                         </div>
-                         <div class="row">
-                             <div class="col-md-6">
-                                 <button type="button" class="btn btn-primary p-3 color-middle margin btn-block pagemenu">Νέες Θέσεις Εργασίας</button>
-                             </div>
-                             <div class="col-md-6">
-                                 <button type="button" class="btn btn-primary p-3 color-middle margin btn-block pagemenu">Πολιτικές που πρέπει να διαβάσω</button>
+                             <div class="col-md-4">
+<a href="/Pages/Main.aspx"><img class="newsButton" src="/SiteAssets/src/imgs/intranet_button_politikes.png" alt="Πολιτικές που πρέπει να διαβάσω"/></a>
                              </div>
                          </div>
 
-
                      </div>
+                     
+                     
+                      <div class="mt-4 p-25 color-middle text-white newsDiv  rounded">
 
-                     <div class="jumbotron color-middle mt-4 p-5 text-white rounded" id="home">
-                         <h1 class="display-4">Ask CEO</h1>
-                         <p class="lead">Στείτε την ερώτησή σας</p>
-                         <hr class="my-4">
-                         <p>Want to know more? Join our mailing list!</p>
 
-                         <label class="sr-only" for="yourEmail">Email</label>
 
-                         <textarea class="form-control margin" style="width:80%" rows="3" placeholder="What's up?"></textarea>
+<div class="row">
+<div class="col-md-6 weWantToHear">
+<!--                     <div class="jumbotron color-middle mt-4 p-4 text-black rounded" id="WeWantToHearContainer"> --> 
+                         <p class="lead small-header">Θέλουμε να ακούσουμε από εσένα</p>
 
-                         <button type="button" class="btn btn-primary color-dark">Αποστολή</button>
 
+                         <p>Στείλε τις σκέψεις σου</p>
+
+                         <textarea id="weWantToHearTextArea" class="form-control margin" style="width:95%" rows="5" placeholder="Γράψε την ερώτησή σου και επέλεξε 'Αποστολή'"></textarea>
+
+                         <button type="button" class="btn btn-primary color-dark" onclick='postWeWantToHear()' >Αποστολή</button>
+</div>
+<!--                     </div> -->
+                     <div class="col-md-6 askCEO">
+					<!--	<button class="askCEOButton" text="XXXXX">Ρωτήστε τον CEO</button> <br/> --> 
+						<button type="button" id="buttonAskCEO" class="askCEO color-middle" onclick='askCEO()'><img class="askCEO" src="/SiteAssets/src/imgs/intranet_button_ask-the-ceo.png" alt="Deltia Typou"/> </button>
                      </div>
-                     <!--<div class="jumbotron color-dark topmargin" id="home">
-                        <h1 class="display-4">Ask CEO</h1>
-                        <p class="lead">Στείτε την ερώτησή σας</p>
-                        <hr class="my-4">
-                        <p>Want to know more? Join our mailing list!</p>
-
-                        <label class="sr-only" for="yourEmail">Email</label>
-
-                        <textarea class="form-control" style="width:80%" rows="3" placeholder="What's up?"></textarea>
-
-                        <button type="button" class="btn btn-primary color-dark2">Αποστολή</button>
-
-                    </div>
-                    <div class="jumbotron color-dark2 topmargin" id="home">
-                        <h1 class="display-4">Ask CEO</h1>
-                        <p class="lead">Στείτε την ερώτησή σας</p>
-                        <hr class="my-4">
-                        <p>Want to know more? Join our mailing list!</p>
-
-                        <label class="sr-only" for="yourEmail">Email</label>
-
-                        <textarea class="form-control" style="width:80%" rows="3" placeholder="What's up?"></textarea>
-
-                        <button type="button" class="btn btn-primary my-2 my-sm-0">Αποστολή</button>
-
-                    </div>-->
+                     </div>    
+                     </div>
                  </div>
+                 
+                 
                  <div class="col-md-3 calendarColumn">
                      <table height="90%">
                          <tr>
@@ -240,16 +170,42 @@
 
              <hr>
 
+ <div class="modal fade in" id="alertMessageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+     <div class="custom-dialogForm modal-dialog" role="document">
+         <div class="modal-content custom-dialogForm-header">
+             <div class="modal-header">
+                 <h5 class="modal-title">Ask CEO</h5>
+
+                     <span aria-hidden="true">×</span>
+
+             </div>
+             <div class="alert">
+
+
+
+                         <p>Κάνε την ερώτησή σου στο CEO</p>
+
+                         <textarea id="askCEOTextArea" class="form-control margin" style="width:95%" rows="5" placeholder="Γράψε την ερώτησή σου και επέλεξε 'Αποστολή'"></textarea>
+
+                         <button type="button" class="btn btn-primary color-dark" onclick='postAskCEO()' >Αποστολή</button>
+                         
+                 
+                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"/>
+             </div>
+             <div class="modal-footer">
+                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Κλείσιμο (χωρίς Αποστολή)</button>
+
+             </div>
+         </div>
+     </div>
+ </div>
 
 
          </div> <!-- /container -->
 
      </main>
 
-     <footer class="container">
-         <p>&copy; Company 2017-2018</p>
-     </footer>
-
+   
      <!-- Bootstrap core JavaScript
     ================================================== -->
      <!-- Placed at the end of the document so the pages load faster -->
@@ -257,48 +213,88 @@
      <!-- <script>window.jQuery || document.write('<script src="https://getbootstrap.com/docs/4.0/assets/js/vendor/jquery-slim.min.js"><\/script>')</script> -->
      <!-- <script src="https://getbootstrap.com/docs/4.0/assets/js/vendor/popper.min.js"></script> -->
      <!-- <script src="https://getbootstrap.com/docs/4.0/dist/js/bootstrap.min.js"></script> -->
-     <script src="src/jquery/jquery371.js"></script>
-     <script src="src/bootstrap/b462.js"></script>
+     <script src="/SiteAssets/src/jquery/jquery351.js"></script>
+     <script src="/SiteAssets/src/bootstrap/b462.js"></script>
      <!--<script src="https://code.jquery.com/jquery-3.3.1.slim.js"></script>
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script> --> 
-     <script src="src/calendar/mini-event-calendar.js?v=1"></script>
+     <script src="/SiteAssets/src/calendar/mini-event-calendar.js?v=1"></script>
+
+
+<script> 
+
+    function askCEO() {
+
+        $('#alertMessageModal').modal('show');
+        return false;
+    }
+
+
+    function postAskCEO() {
+        var comment = $("#askCEOTextArea").val();
+        if (comment.trim() === '') {
+            alert('Δεν μπορεί να σταλεί το μήνυμα γιατί είναι κενό. ');
+        }
+        else {
+            $.post("/_layouts/_webServices/postNotes.asmx/postAskCEO",
+                {
+                    comments: comment,
+                },
+                function (data, status) {
+                    if (!(data == 'OK')) { alert('Κάποιο πρόβλημα εντοπίστηκε κατά την αποστολή, παρακαλούμε δοκιμάστε εκ νέου αφού ανανεώσετε (F9) τη σελίδα'); }
+                    else {
+                        alert("Ευχαριστούμε για την Επικοινωνία!");
+                        console.log(data);
+                        $("#askCEOTextArea").val("");
+                        $('#alertMessageModal').modal('hide');
+                    }
+                }
+            )
+                .fail(function () { alert('Φαίνεται ότι δεν είναι δυνατή η επικοινωνία για τεχνικούς λόγους, παρακαλούμε δοκιμάστε αργότερα.') });
+        }
+    }
+
+
+
+
+    function postWeWantToHear() {
+        var comment = $("#weWantToHearTextArea").val();
+        if (comment.trim() === '') {
+            alert('Δεν μπορεί να σταλεί το μήνυμα γιατί είναι κενό. ');
+        }
+        else {
+            $.post("/_layouts/_webServices/postNotes.asmx/postWeWantToHear",
+                {
+                    comments: comment,
+                },
+                function (data, status) {
+                    if (!(data == 'OK')) { alert('Κάποιο πρόβλημα εντοπίστηκε κατά την αποστολή, παρακαλούμε δοκιμάστε εκ νέου αφού ανανεώσετε (F9) τη σελίδα'); }
+                    else {
+                        alert("Ευχαριστούμε για την Επικοινωνία!");
+                        console.log(data);
+                        $("#weWantToHearTextArea").val("");
+                    }
+                }
+            )
+                .fail(function () { alert('Φαίνεται ότι δεν είναι δυνατή η επικοινωνία για τεχνικούς λόγους, παρακαλούμε δοκιμάστε αργότερα.') });
+        }
+    }
+</script>
 
      <script>
-         var sameDaylastWeek = new Date().setDate(new Date().getDate() - 7);
-         var someDaynextMonth = new Date().setDate(new Date().getDate() + 31);
 
          // All dates should be provided in timestamps
-         var sampleEvents = [
-             {
-                 title: "<ul><li>Soulful 1 sundays bay area with an extreme long title to show </li><li>Athens Comicicon </li><li>Soulful 2 sundays bay area with an extreme long title to show </li></ul><ul><li>Athens Comicicon </li></ul>",
-                 date: sameDaylastWeek, // Same day as today, last week
-                 link: "https://www.eventbrite.com/e/soulful-sundays-bay-area-edition-tickets-55214242285?aff=ehomecard"
-             },
-             {
-                 title: "Soulful 2 sundays bay area with an extreme long title to show",
-                 date: sameDaylastWeek, // Same day as today, last week
-                 link: "https://www.eventbrite.com/e/soulful-sundays-bay-area-edition-tickets-55214242285?aff=ehomecard"
-             },
-             {
-                 title: "London Comicon",
-                 date: new Date().getTime(), // Today
-                 link: "https://www.eventbrite.co.uk/e/london-film-comic-con-summer-2019-tickets-49472593860?aff=ebdssbdestsearch"
-             },
-             {
-                 title: "Youth Athletic Camp",
-                 date: someDaynextMonth, // Some day as today, next month
-                 link: "https://www.eventbrite.com/e/leaner-stronger-faster-tm-youth-athletic-camp-2021-tickets-38245970728?aff=ebdssbdestsearch"
-             }
-         ];
+         var sharepointEvents =
+             <asp: PlaceHolder runat="server" __designer: Preview="&lt;%= FirstPage.CalendarEvents.getEvents() %&gt;" __designer: Values="&lt;P N=&#39;ID&#39; ID=&#39;1&#39; T=&#39;ctl05&#39; /&gt;&lt;P N=&#39;Page&#39; ID=&#39;2&#39; /&gt;&lt;P N=&#39;TemplateControl&#39; R=&#39;2&#39; /&gt;&lt;P N=&#39;AppRelativeTemplateSourceDirectory&#39; R=&#39;-1&#39; /&gt;"><%= FirstPage.CalendarEvents.getEvents() %> </asp: PlaceHolder>;
+
 
          $(document).ready(function () {
              $("#calendar").MEC({
-                 events: sampleEvents
+                 events: sharepointEvents
              });
 
 
          });
      </script>
 
- </body>
-</html>
+</asp:Content>
+

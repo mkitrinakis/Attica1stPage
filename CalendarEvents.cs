@@ -10,6 +10,7 @@ using System.Runtime.InteropServices.ComTypes;
 using Newtonsoft.Json; 
 using Microsoft.SharePoint.JsonUtilities;
 using Newtonsoft.Json.Linq;
+using System.Collections; 
 
 
 
@@ -25,7 +26,8 @@ namespace FirstPage
                 {
                     SPList l = web.Lists["CalendarFirstPage"];
                     SPListItemCollection col = selectItems(l);
-                    return printItems(col);
+                    Hashtable entries = normalizeEntries(col); 
+                    return printItems(entries);
                 }
             }
             catch (Exception ex)
@@ -56,7 +58,59 @@ namespace FirstPage
             public JRaw date { get; set; }
         }
 
-        private static string printItems(SPListItemCollection col)
+
+        
+        private static Hashtable normalizeEntries(SPListItemCollection col)
+            // is used just to group entries per day, as 
+        {
+            Hashtable entries = new System.Collections.Hashtable(); 
+            foreach (SPListItem itm in col)
+            {
+                try
+                {
+                    DateTime eventDate = (DateTime)itm["EventDate"];
+                    string key = "new Date( " + eventDate.Year.ToString() + "," + (eventDate.Month - 1).ToString() + "," + eventDate.Day + ")";
+                    if (entries.ContainsKey(key))
+                    {
+                     ((List<string>)entries[key]).Add(itm.Title); 
+                    }
+                    else { entries[key] = new List<string>() { itm.Title }; }
+                }
+                catch { }; 
+            }
+            return entries; 
+        }
+
+        private static string printItems(Hashtable entries)
+        {
+            List<CalendarEntry> calendarEntries = new List<CalendarEntry>();
+            foreach (string key in entries.Keys)
+            {
+                try
+                {
+                    CalendarEntry entry = new CalendarEntry();
+                    entry.date = new JRaw(key);
+                    List<string> vals = (List<string>)entries[key];
+                    if (vals.Count.Equals(1))
+                    {
+                        entry.title = vals[0];
+                    }
+                    else
+                    {
+                        string titles = "";
+                        foreach (string val in vals) { titles += " <li> " + val + " </li> "; }
+                        titles = "<ul>" + titles + "</ul>";
+                        entry.title = titles;
+                    }
+
+                    calendarEntries.Add(entry);
+                }
+                catch (Exception ex) { };
+            }
+            return JsonConvert.SerializeObject(calendarEntries);
+        }
+
+        private static string printItems_old(SPListItemCollection col)
         {
             List<CalendarEntry> calendarEntries = new List<CalendarEntry>();
             foreach (SPListItem itm in col)

@@ -1,0 +1,58 @@
+﻿body {
+    background-color: #f2f4f8;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    !important font-weight: 300;
+}
+
+
+.custom-titleAreaBox-width {
+    width: 90%
+}
+
+/* changes to IntranetOslo css */
+/* top menu changes */
+
+.o365cs-base.o365spo .o365cs-topnavBGColor-2, .o365cs-base.o365spo.o365cs-topnavBGColor-2, #O365_NavHeader.o365spo.o365cs-topnavBGColor-2 {
+    background-color: rgb(27,71,141) !important;
+}
+
+.ms-core-listMenu-root {
+    background-color: #fff;
+}
+
+
+
+.mainMenu li a {
+    background-color: rgb(27,71,141) !important;
+    color: rgba(255,255,255,1) !important;
+}
+
+    .mainMenu li a:hover {
+        background-color: rgb(27,71,141) !important;
+        opacity: 0.8;
+        /*color: white !important; */
+    }
+
+.ms-core-listMenu-horizontalBox li.static > .ms-core-listMenu-item {
+    border-radius: 190px;
+    margin: 0px 10px 20px 10px;
+}
+
+*, ::after, ::before {
+    box-sizing: content-box;
+}
+
+.bootstrap-box-sizing *, ::after, ::before {
+    box-sizing: border-box;
+}
+
+#siteIcon {
+    /*    width: 90%; */
+    max-width: 2650px !important;
+}
+
+
+
+h2, h3, .ms-h2, .ms-h3, .ms-headerFont {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif !important;
+}
