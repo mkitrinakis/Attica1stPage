@@ -14,8 +14,8 @@ namespace FirstPage
         public static string getUserName()
         {
             SPWeb web = SPContext.Current.Web;
-            return web.CurrentUser.Name; 
-
+            string[] names = web.CurrentUser.Name.Split(' ');
+            return names.Last(); 
         }
     }
 }
