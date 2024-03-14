@@ -15,7 +15,8 @@ namespace FirstPage
         {
             SPWeb web = SPContext.Current.Web;
             string[] names = web.CurrentUser.Name.Split(' ');
-            return names.Last(); 
+            return names.Last();
+            
         }
     }
 }
