@@ -17,22 +17,33 @@ namespace FirstPage
                 SPView v = l.Views["FirstPageView"];
                 SPListItemCollection col = l.GetItems(v);
                 string rs = "";
-                foreach (SPListItem itm in col)
+                if (col.Count > 0)
                 {
-                    rs += "<div class=\"row topmargin\">\r\n";
-                    rs += "<div class=\"col-md-10 color-font-blue\">";
-                    rs += (itm["Title"] ?? "").ToString();
-                    rs += "</div>";
-                    rs += "<div class=\"col-md-2 color-font-blue\">";
-                    rs += getDate(itm["Created"]);
-                    rs += "</div>";
+                    foreach (SPListItem itm in col)
+                    {
+                        rs += "<div class=\"row topmargin\">\r\n";
+                        rs += "<div class=\"col-md-10 color-font-blue\">";
+                        rs += (itm["Title"] ?? "").ToString();
+                        rs += "</div>";
+                        rs += "<div class=\"col-md-2 color-font-blue column-right\">";
+                        rs += getDate(itm["Created"]);
+                        rs += "</div>";
+                        rs += "</div>";
+                        rs += "<div class=\"row\">";
+                        rs += "<div class=\"col-md-12 font-small\">";
+                        rs += (itm["Summary"] ?? "").ToString();
+                        rs += "      <a href=\"/Lists/Announcements/DispForm.aspx?ID=" + itm.ID + "\"> Περισσότερα... </a>";
+                        rs += "</div>";
+                        rs += "</div>";
+                    }
+                }
+                else
+                {
+                    rs += "<div class=\"row\">";
+                    rs += "<div class=\"col-md-12 font-small\">";
+                    rs += "Δεν υπάρχουν Ενεργές Ανακοινώσεις"; 
                     rs += "</div>";
                     rs += "<div class=\"row\">";
-                    rs += "<div class=\"col-md-12\">";
-                    rs += (itm["Summary"] ?? "").ToString();
-                    rs += "      <a href=\"/Lists/Announcements/DispForm.aspx?ID=" + itm.ID + "\"> Περισσότερα... </a>";
-                    rs += "</div>";
-                    rs += "</div>";
                 }
                 return rs;
             }
