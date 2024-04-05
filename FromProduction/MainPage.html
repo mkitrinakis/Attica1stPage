@@ -1,0 +1,163 @@
+<html>
+<head>
+ <link rel="stylesheet" href="b462.css">
+    <link rel="stylesheet" href="master_custom.css" />
+    <link rel="stylesheet" href="mini-event-calendar.css">
+    <link rel="stylesheet" href="firstPage_custom.css" />
+    <link rel="stylesheet" href="customCalendar.css" />
+</head>	
+
+<main role="main">
+
+
+         <div class="container width-full   bootstrap-box-sizing">
+             <!-- Example row of columns -->
+            
+             <div class="row color-light">
+                 <div class="col-md-2">
+                     <div class="row menuLeft">
+                         <div class="col-12 align-self-center">
+                             <a href="http://sp16qa.boahq.gr/management/Pages/home.aspx">   <img src="/SiteAssets/src/imgs/Intranet_side_banner_dieuthinseis.png" /> </a>
+                         </div>
+                     </div>
+                     <div class="row menuLeft">
+                         <div class="col-12 align-self-center">
+                             <a href="http://sp16qa.boahq.gr/DocLib3/Forms/AllItems.aspx?PageView=Shared&InitialTabId=Ribbon.WebPartPage&VisibilityContext=WSSWebPartPage"> <img src="/SiteAssets/src/imgs/Intranet_side_banner_aitiseis.png" /> </a> 
+                         </div>
+                     </div>
+                     <div class="row menuLeft">
+                         <div class="col-12 align-self-center">
+                            <a href="http://sp16qa.boahq.gr/Sustimata/Forms/AllItems.aspx">  <img src="/SiteAssets/src/imgs/Intranet_side_banner_systimata.png" /> </a> 
+                         </div>
+                     </div>
+                     <div class="row menuLeft">
+                         <div class="col-12 align-self-center">
+                            <a href="http://sp16qa.boahq.gr/Lists/List/AllItems.aspx">    <img src="/SiteAssets/src/imgs/Intranet_side_banner_links.png" />   </a>
+                         </div>
+                     </div>
+                     <div class="row menuLeft">
+                         <div class="col-12 align-self-center">
+                            <a href="http://sp16qa.boahq.gr/attica%20bank%20stories/Forms/AllItems.aspx">   <img src="/SiteAssets/src/imgs/Intranet_side_banner_arxeio.png" /> </a> 
+                         </div>
+                     </div>
+                 </div>
+
+                 <div class="col-md-7">
+     <!--              <img src="src/imgs/la.jpg" alt="Los Angeles" width="770" height="350">  --> 
+<!--     <img class="img-fluid w-100" src="src/imgs/Welcome.jpg" alt="Welcome" >  --> 
+                     <!--<div class="mt-4 p-5 bg-primary text-white rounded">-->
+                 <div class="welcome-parent">
+   <img class="img-fluid w-100" src="/SiteAssets/src/imgs/Welcome.png" alt="">
+
+
+   <div class="welcome-bottom-left">Καλως ήρθες  <asp:PlaceHolder runat="server"><%= FirstPage.WelcomeMsg.getUserName() %> στο  <b>Intranet της Attica Bank</b> </asp:PlaceHolder></div>
+					 
+</div>
+
+
+<div class="mt-4 p-25 color-bordered   newsDiv   rounded">
+                         <div class="row color-middle" style="text-align:center">
+<!--                             <h3 class="attica-fonts">NEA/ΑΝΑΚΟΙΝΩΣΕΙΣ</h3> --> 
+
+
+                             <div class="col-md-12">
+                             <p class="lead small-header">   Με Μια Mατιά </p>
+                             </div>
+                         </div>
+                         
+                         <asp:PlaceHolder runat="server"><%= FirstPage.Announcements.getTopAnnouncements() %> </asp:PlaceHolder>
+                         <div class="row newsDivInner" style="text-align:center">
+                         </div>
+                         <div class="row">
+                             <div class="col-md-4">
+<a href="http://sp16qa.boahq.gr/DocLib4/Forms/AllItems.aspx"><img class="newsButton" src="/SiteAssets/src/imgs/intranet_button_ta-nea.png" alt="Τα Νέα μας"/></a>
+                             </div>
+                             <div class="col-md-4">
+<a href="javascript:alert('Here we must have a link')"><img class="newsButton" src="/SiteAssets/src/imgs/intranet_button_theseis-ergasias.png" alt="Θέσεις Εργασίας"/></a>
+                             </div>
+                             <div class="col-md-4">
+<a href="http://sp16qa.boahq.gr/Lists/List1/AllItems.aspx?PageView=Shared&InitialTabId=Ribbon.WebPartPage&VisibilityContext=WSSWebPartPage"><img class="newsButton" src="/SiteAssets/src/imgs/intranet_button_politikes.png" alt="Πολιτικές που πρέπει να διαβάσω"/></a>
+                             </div>
+                         </div>
+
+                     </div>
+                     
+                     
+                      <div class="mt-4 p-25 color-middle text-white newsDiv  rounded">
+
+
+
+<div class="row">
+<div class="col-md-6 weWantToHear">
+<!--                     <div class="jumbotron color-middle mt-4 p-4 text-black rounded" id="WeWantToHearContainer"> --> 
+                         <p class="lead small-header">Θέλουμε να ακούσουμε από εσένα</p>
+
+
+
+
+                         <textarea id="weWantToHearTextArea" class="form-control margin" style="width:95%" rows="5" placeholder="Γράψε την ερώτησή σου και επίλεξε 'Αποστολή'"></textarea>
+
+                         <button type="button" class="btn btn-primary color-dark" onclick='postWeWantToHear()' >Αποστολή</button>
+</div>
+<!--                     </div> -->
+                     <div class="col-md-6 askCEO">
+					<!--	<button class="askCEOButton" text="XXXXX">Ρωτήστε τον CEO</button> <br/> --> 
+						<button type="button" id="buttonAskCEO" class="askCEO color-middle" onclick='askCEO()'><img class="askCEO" src="/SiteAssets/src/imgs/intranet_button_ask-the-ceo.png" alt="Deltia Typou"/> </button>
+                     </div>
+                     </div>    
+                     </div>
+                 </div>
+                 
+                 
+                 <div class="col-md-3 calendarColumn">
+                     <table height="90%">
+                         <tr>
+                             <td class="calendarColumn">
+                                 <div id="calendar"></div>
+                             </td>
+                         </tr>
+                     </table>
+
+                 </div>
+             </div>
+
+             <hr>
+
+ <div class="modal fade in" id="alertMessageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+     <div class="custom-dialogForm modal-dialog" role="document">
+         <div class="modal-content custom-dialogForm-header">
+             <div class="modal-header">
+                 <h5 class="modal-title">Ask CEO</h5>
+
+                     <span aria-hidden="true">×</span>
+
+             </div>
+             <div class="alert">
+
+
+                         <textarea id="askCEOTextArea" class="form-control margin" style="width:95%" rows="5" placeholder="Γράψε την ερώτησή σου και επίλεξε 'Αποστολή'"></textarea>
+
+                         <button type="button" class="btn btn-primary color-dark" onclick='postAskCEO()' >Αποστολή</button>
+                         
+                 
+                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"/>
+             </div>
+             <div class="modal-footer">
+                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Κλείσιμο (χωρίς Αποστολή)</button>
+
+             </div>
+         </div>
+     </div>
+ </div>
+
+
+         </div> <!-- /container -->
+  <script src="jquery351.js"></script>
+     <script src="b462.js"></script>
+     
+     <script src="mini-event-calendar.js?v=1"></script>
+
+
+     </main>
+	 
+</html>	 

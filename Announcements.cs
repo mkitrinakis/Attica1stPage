@@ -10,43 +10,70 @@ namespace FirstPage
     {
         public static string getTopAnnouncements()
         {
-            using (SPWeb web = SPContext.Current.Web)
+            try
             {
-                SPList l = web.Lists["ΑΝΑΚΟΙΝΩΣΕΙΣ"];
-
-                SPView v = l.Views["FirstPageView"];
-                SPListItemCollection col = l.GetItems(v);
-                string rs = "";
-                if (col.Count > 0)
+                using (SPWeb web = SPContext.Current.Web)
                 {
-                    foreach (SPListItem itm in col)
+                    SPList l = web.Lists["ΑΝΑΚΟΙΝΩΣΕΙΣ"];
+
+                    SPView v = l.Views["FirstPageView"];
+                    SPListItemCollection col = l.GetItems(v);
+                    string rs = "";
+                    if (col.Count > 0)
                     {
-                        rs += "<div class=\"row topmargin\">\r\n";
-                        rs += "<div class=\"col-md-10 color-font-blue\">";
-                        rs += (itm["Title"] ?? "").ToString();
-                        rs += "</div>";
-                        rs += "<div class=\"col-md-2 color-font-blue column-right\">";
-                        rs += getDate(itm["Created"]);
-                        rs += "</div>";
-                        rs += "</div>";
+                        foreach (SPListItem itm in col)
+                        {
+                            try
+                            {
+                                rs += "<div class=\"row topmargin\">\r\n";
+                                rs += "<div class=\"col-md-10 color-font-blue\">";
+                                rs += (itm["Title"] ?? "").ToString();
+                                rs += "</div>";
+                                rs += "<div class=\"col-md-2 color-font-blue column-right\">";
+                                rs += getDate(itm["Created"]);
+                                rs += "</div>";
+                                rs += "</div>";
+                                rs += "<div class=\"row\">";
+                                rs += "<div class=\"col-md-12 font-small\">";
+                                rs += (itm["Summary"] ?? "").ToString();
+                                rs += "      <a href=\"/Lists/Announcements/DispForm.aspx?ID=" + itm.ID + "\"> Περισσότερα... </a>";
+                                rs += "</div>";
+                                rs += "</div>";
+                            }
+                            catch (Exception e)
+                            {
+                                string msg = "Συστημικό Πρόβλημα στην ανακοίωση: " + itm.ID + ":" + e.Message;
+                                return printError(msg);
+                            }
+                        }
+                    }
+                    else
+                    {
                         rs += "<div class=\"row\">";
                         rs += "<div class=\"col-md-12 font-small\">";
-                        rs += (itm["Summary"] ?? "").ToString();
-                        rs += "      <a href=\"/Lists/Announcements/DispForm.aspx?ID=" + itm.ID + "\"> Περισσότερα... </a>";
+                        rs += "Δεν υπάρχουν Ενεργές Ανακοινώσεις";
                         rs += "</div>";
-                        rs += "</div>";
+                        rs += "<div class=\"row\">";
                     }
+                    return rs;
                 }
-                else
-                {
-                    rs += "<div class=\"row\">";
-                    rs += "<div class=\"col-md-12 font-small\">";
-                    rs += "Δεν υπάρχουν Ενεργές Ανακοινώσεις"; 
-                    rs += "</div>";
-                    rs += "<div class=\"row\">";
-                }
-                return rs;
             }
+            catch (Exception ex)
+            {
+                string msg = "Πρόβλημα στο παράθυρο των Ανακοινώσεων: " + ex.Message;
+                return printError(msg);
+            }
+        }
+
+        private static string printError(string msg)
+        {
+            string rs = "";
+            rs += "<div class=\"row\">";
+            rs += "<div class=\"col-md-12 font-small\">";
+            rs += msg; 
+            rs += "</div>";
+            rs += "</div>";
+            return rs; 
         }
 
         private static string getDate(object obj)

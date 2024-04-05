@@ -1,0 +1,345 @@
+
+
+body {
+    background-color: #f2f4f8;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    !important font-weight: 300;
+}
+/* 
+table.menuTop {
+    width:100%; 
+}
+
+    table.menuTop td:hover {
+        color: white;
+    }
+
+    table.menuTop td {
+        width: 14.5%;
+        height: 25px;
+        background-color: rgb(27,71,141);
+        padding: 5px 5px 5px 5px;
+        border: 5px solid #6185BD;
+        border-radius: 190px;
+        border: 5px solid #f2f4f8;
+        text-align: center;
+        color: rgba(255,255,255,0.8);
+        font-weight: bold;
+    }
+
+table td.menuTop {
+    font-size: 0.8rem;
+}
+table.menuTop a {
+    text-decoration: none;
+    color: rgba(255,255,255,0.8);
+}
+
+    table.menuTop a:hover {
+        text-decoration: none;
+        color: white;
+    }
+
+    table td.menuTop-long {
+        font-size:0.8rem; 
+    }
+
+  */
+
+
+// Blue Attica Bank 27, 71, 141
+// secondary (Siel) 107, 167, 255
+
+// Gray Attica Bank (Dark) 160, 172, 174
+// Secondary Middle 227, 228, 231
+// Seconday Light (242, 245, 243)
+
+/*
+.attica-fonts{
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif !important;
+ font-weight: 300;
+}
+*/
+
+a, a:visited {
+	color:red; 
+/*	color:rgb(107, 167, 255) */
+
+}
+
+.width-full {
+    width: 100% !important;
+    margin-left: 0px;
+    margin-right: auto;
+}
+
+.color-light {
+    background-color: white;
+    border-color: white;
+}
+
+.color-middle {
+    background-color: rgb(107,167,255);
+    /*    border-color: #32558C; */
+}
+
+.color-bordered {
+/*border-color: rgb(107,167,255); */
+border-color: rgb(107,167,255);
+
+border-style:solid; 
+border-width:15px; 
+border-bottom-width:100px; 
+}
+
+
+.color-font-blue {
+color: rgb(27,71,141); 	
+font-weight:bold; 
+}
+.color-font-light {
+color: rgb(227,228,231); 	
+font-weight:bold; 
+}
+
+.color-font-black {
+color: black;
+font-weight:bold; 
+}
+
+
+.font-small {
+	font-size:0.9rem;
+}
+
+.column-right {
+	text-align:right;
+	padding-right:2em; 
+}
+
+button.color-middle {
+    background-color: rgb(107,167,255);
+    border-style:solid;
+    border-width:2px;
+    border-color: rgb(27,71,141);
+    border-color: rgb(227,228,241);
+	}
+
+
+button.color-middle:hover {
+
+    opacity: 0.9
+}
+
+.color-dark {
+    background-color: rgb(27,71,141);
+    border-color: #32558C;
+}
+
+button.color-dark:hover {
+    opacity: 0.9
+}
+
+.color-dark2 {
+    background-color: #32558C;
+    border-color: #32558C;
+}
+
+div .topmargin {
+    margin-top: 1em;
+}
+
+div .topmargin-big {
+    margin-top: 3em;
+}
+
+div .margin {
+    margin: 1em;
+}
+
+div .padding {
+    padding: 20px;
+}
+
+
+
+.carousel-inner img {
+    width: 100%;
+    height: 100%;
+}
+
+
+.menuLeft {
+    margin-bottom: 1em;
+}
+
+    .menuLeft img:hover {
+        opacity: 0.9;
+    }
+
+
+
+.askCEO {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-self: center;
+    padding: 10px;
+}
+
+button.askCEO {
+	max-width:95%;
+	border:none; 
+}
+.askCEO img {
+/*	max-width:95%; */
+}
+
+
+img.askCEO:hover {
+    opacity: 0.9
+}
+
+.weWantToHear {
+    color: black;
+    border: solid;
+    border-width: 0px 3px 0px 0px;
+    border-color: white;
+    padding: 10px;
+}
+
+
+/*
+.askCEOButton {
+	background-color: rgb(27,71,141);
+color: rgba(255,255,255,1);
+ opacity:0.8; 
+  margin:30px 30px 30px 30px;
+}
+.askCEOButton:hover {
+	background-color: rgb(27,71,141);
+color: rgba(255,255,255,1);
+}
+*/
+
+/*
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1415px;
+    }
+}
+*/
+
+
+.menuLeft img {
+	    max-width: 80%;
+}
+
+
+.newsButton {
+    position: absolute;
+    margin-left: 20px;
+    margin-top: 30px;
+    max-width: 80%;
+}
+
+    .newsButton:hover {
+        opacity: 0.9;
+    }
+
+
+.newsDivInner {
+    padding-bottom: 100px;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+.newsDiv {
+    margin-bottom: 100px;
+}
+
+.newsFooter {
+    height: 100px;
+    background-color: white;
+}
+
+.small-header {
+    font-weight: bold;
+}
+
+.welcome-parent {
+    position: relative;
+    width: 100%;
+}
+
+.welcome-bottom-left {
+    position: absolute;
+    color: rgb(27,71,141);
+    font-size: 1.6em;
+    font: "Helvetica Neue";
+    left: 40px;
+    top: 40%;
+    bottom: auto;
+    max-width: 40%;
+}
+
+
+.custom-dialogForm {
+    max-width: 55%;
+}
+
+
+
+
+
+
+
+
+
+
+/* changes to bootstrap */
+.modal-header {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	background-color: rgb(27,71,141);
+	color:white;
+}
+
+.modal-title {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif ;
+}
+
+.row {
+	margin-left:0px; 
+}
+
+
+
+    .container {
+        max-width: 1900px;
+    }
+
+
+
+@media (max-width: 1600px) {
+    .welcome-bottom-left {
+        font-size: 1.4em;
+        left: 30px;
+        top: 30%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .welcome-bottom-left {
+        font-size: 1.2em;
+        left: 30px;
+        top: 20%;
+    }
+}
+
+
+@media (max-width: 800px) {
+    .welcome-bottom-left {
+        font-size: 0.8em;
+        left: 20px;
+        top: 10%;
+    }
+}
